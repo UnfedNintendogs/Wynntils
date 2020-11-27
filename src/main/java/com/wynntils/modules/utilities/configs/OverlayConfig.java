@@ -34,7 +34,7 @@ public class OverlayConfig extends SettingsClass {
     @Setting(displayName = "Split Coordinates", description = "Should the coordinates be shown separately to the action bar?")
     public boolean splitCoordinates = false;
 
-    @Setting(displayName = "Replace Direction on Action Bar", description = "Should the action bar display the Y coordinate instead of the player's direction?")
+    @Setting(displayName = "Use Y position on Action Bar", description = "Should the action bar display the player Y position is instead of their orientation?")
     public boolean replaceDirection = false;
 
     @SettingsInfo(name = "health_settings", displayPath = "Utilities/Overlays/Health")
@@ -644,6 +644,10 @@ public class OverlayConfig extends SettingsClass {
         @Setting(displayName = "Player List Transparency", description = "How transparent should the custom player list be?", order = 2)
         @Setting.Limitations.FloatLimit(min = .0f, max = 1f)
         public float backgroundAlpha = 0.3f;
+
+        @Setting(displayName = "Player List Opening Duration", description = "How long should the opening animation of the custom player list last?", order = 3)
+        @Setting.Limitations.DoubleLimit(min = 0D, max = 500D, precision = 5D)
+        public double openingDuration = 125D;
 
     }
 
